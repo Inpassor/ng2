@@ -8,7 +8,7 @@ Phase: <input type="search"
 
 
 <q-grid caption="Filter Row Custom"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         [model]="gridModel">
 	<q-grid-columns generation="deep">
 		<q-grid-column [canFilter]="false"></q-grid-column>

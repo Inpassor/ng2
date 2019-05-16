@@ -1,5 +1,5 @@
 <q-grid caption="Sort Row Basic"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         [sortBy]="['+gender', '-name.last']"
         [sortTrigger]="[]">
 	<q-grid-columns generation="deep">

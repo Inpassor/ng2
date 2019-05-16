@@ -1,5 +1,5 @@
 <q-grid caption="Group Row Summary"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         [groupBy]="['bondingType', 'groupBlock']"
         groupMode="subhead"
         groupSummary="leaf">

@@ -1,5 +1,5 @@
 <q-grid caption="Summary Column Aggregation"
-        [rows]="rows | async">
+        [rows]="rows$ | async">
 	<q-grid-columns generation="deep">
 		<q-grid-column key="name"
 		               aggregation="first">

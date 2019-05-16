@@ -11,7 +11,7 @@ import { Action, Command } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleColumnRowOptionsBasicComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	rowActions = [
 		new Action(
 			new Command<{ row: Atom }>({
@@ -35,6 +35,6 @@ export class ExampleColumnRowOptionsBasicComponent {
 	];
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 }

@@ -16,10 +16,10 @@ import * as XLSX from 'xlsx';
 })
 export class ExampleExportBasicComponent implements AfterViewInit {
 	@ViewChild(GridComponent) myGrid: GridComponent;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	ngAfterViewInit() {

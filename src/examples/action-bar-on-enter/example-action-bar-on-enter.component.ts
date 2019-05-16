@@ -11,7 +11,7 @@ import { GridModel, Action, GridService, Command, Grid } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleActionBarOnEnterComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	gridModel: GridModel;
 	gridService: GridService;
 
@@ -48,7 +48,7 @@ export class ExampleActionBarOnEnterComponent {
 	});
 
 	constructor(dataService: DataService, grid: Grid) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 		this.gridModel = grid.model();
 		this.gridService = grid.service(this.gridModel);
 

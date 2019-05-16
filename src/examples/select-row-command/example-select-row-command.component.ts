@@ -12,10 +12,10 @@ import { GridComponent, Command } from 'ng2-qgrid';
 })
 export class ExampleSelectRowCommandComponent implements AfterViewInit {
 	@ViewChild(GridComponent) grid: GridComponent;
-	rows: Observable<Human[]>;
+	rows$: Observable<Human[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getPeople();
+		this.rows$ = dataService.getPeople();
 	}
 
 	ngAfterViewInit() {

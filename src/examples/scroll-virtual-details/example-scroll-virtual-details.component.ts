@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleScrollVirtualDetailsComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 }

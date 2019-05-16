@@ -12,10 +12,10 @@ import { GridComponent, Grid } from 'ng2-qgrid';
 })
 export class ExampleFocusCellCustomComponent {
 	@ViewChild(GridComponent) grid: GridComponent;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService, private qgrid: Grid) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	focus(rowIndex) {

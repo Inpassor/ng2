@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleColumnListLoopComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	columns = [
 		{
@@ -32,6 +32,6 @@ export class ExampleColumnListLoopComponent {
 	];
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 }

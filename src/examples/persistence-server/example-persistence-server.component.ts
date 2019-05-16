@@ -14,12 +14,12 @@ import { DataService, Atom } from '../data.service';
 })
 export class ExamplePersistenceServerComponent {
 	gridModel: GridModel;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	currentUser = 'user1';
 	users: Observable<string[]>;
 
 	constructor(private dataService: DataService, private qgrid: Grid) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 		this.users = dataService.getUsers();
 		this.gridModel = this.qgrid.model();
 		this.gridModel.persistence({

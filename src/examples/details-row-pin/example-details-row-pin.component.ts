@@ -11,9 +11,9 @@ import { Observable } from 'rxjs';
 	encapsulation: ViewEncapsulation.None
 })
 export class ExampleDetailsRowPinComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 }

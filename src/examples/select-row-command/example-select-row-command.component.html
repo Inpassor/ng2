@@ -1,5 +1,5 @@
 <q-grid caption="Select Row Command"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         selectionUnit="row"
         selectionMode="single">
 	<q-grid-columns generation="deep">

@@ -1,5 +1,5 @@
 <q-grid caption="Pivot Column Template"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         [pivotBy]="['bondingType', 'groupBlock']">
 	<q-grid-columns>
 		<q-grid-column key="name"

@@ -13,10 +13,10 @@ import { GridComponent } from 'ng2-qgrid';
 export class ExampleVisibilityModelComponent implements AfterViewInit {
 	@ViewChild(GridComponent) grid: GridComponent;
 
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	ngAfterViewInit() {

@@ -11,12 +11,12 @@ import { Column, BoolColumn, Grid, PipeContext, GridComponent, Command } from 'n
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleEditRowBasicComponent implements OnInit {
-	rows: Observable<Human[]>;
+	rows$: Observable<Human[]>;
 	columns: Array<Column | BoolColumn>;
 	@ViewChild(GridComponent) myGrid: GridComponent;
 
 	constructor(private dataService: DataService, private qgrid: Grid) {
-		this.rows = dataService.getPeople();
+		this.rows$ = dataService.getPeople();
 	}
 
 	ngOnInit() {

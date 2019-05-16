@@ -12,7 +12,7 @@ import { GridComponent, GridService, Grid, GridModel } from 'ng2-qgrid';
 })
 export class ExampleFilterRowCustomComponent {
 	@ViewChild(GridComponent) myGrid: GridComponent;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	gridModel: GridModel;
 	gridService: GridService;
 
@@ -22,7 +22,7 @@ export class ExampleFilterRowCustomComponent {
 	};
 
 	constructor(dataService: DataService, grid: Grid) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 		this.gridModel = grid.model();
 		this.gridService = grid.service(this.gridModel);
 

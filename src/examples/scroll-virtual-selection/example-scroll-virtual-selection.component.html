@@ -1,6 +1,6 @@
 <q-grid caption="Scroll Virtual Selection"
         scrollMode="virtual"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         selectionUnit="mix"
         selectionMode="range">
         <q-grid-columns generation="deep">

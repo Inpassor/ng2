@@ -11,10 +11,10 @@ import { GridModel } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleActionBarTemplateComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(private dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	sortBySymbol(gridModel: GridModel, dir: string) {

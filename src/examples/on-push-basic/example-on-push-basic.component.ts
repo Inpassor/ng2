@@ -13,10 +13,10 @@ import { GridComponent } from 'ng2-qgrid';
 export class ExampleOnPushBasicComponent implements AfterViewInit {
 	@ViewChild(GridComponent) myGrid: GridComponent;
 
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	ngAfterViewInit() {

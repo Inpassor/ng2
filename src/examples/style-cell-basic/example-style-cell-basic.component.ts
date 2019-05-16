@@ -11,10 +11,10 @@ import { StyleCellContext, Column } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleStyleCellBasicComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	styleCell(row: Atom, column: Column, context: StyleCellContext) {

@@ -11,10 +11,10 @@ import { Column, StyleCellContext } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleScrollVirtualStyleComponent {
-	rows: Observable<Human[]>;
+	rows$: Observable<Human[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getPeople();
+		this.rows$ = dataService.getPeople();
 	}
 
 	styleCell(row: Human, column: Column, ctx: StyleCellContext) {

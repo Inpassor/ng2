@@ -12,11 +12,11 @@ import { Command } from 'ng2-qgrid';
 })
 export class ExampleActionBarBasicComponent {
 	canLoad = true;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	loadCommand = new Command({
 		execute: () => {
-			this.rows = this.dataService.getAtoms();
+			this.rows$ = this.dataService.getAtoms();
 			this.canLoad = false;
 		},
 		canExecute: () => this.canLoad,
@@ -25,7 +25,7 @@ export class ExampleActionBarBasicComponent {
 
 	clearCommand = new Command({
 		execute: () => {
-			this.rows = of([]);
+			this.rows$ = of([]);
 			this.canLoad = true;
 		},
 		canExecute: () => !this.canLoad,

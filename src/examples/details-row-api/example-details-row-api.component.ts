@@ -13,7 +13,7 @@ import { Command, GridComponent, RowDetailsStatus } from 'ng2-qgrid';
 export class ExampleDetailsRowApiComponent implements AfterViewInit {
 	@ViewChild(GridComponent) grid: GridComponent;
 
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	enableExpand = true;
 
 	expandAllCommand = new Command({
@@ -48,7 +48,7 @@ export class ExampleDetailsRowApiComponent implements AfterViewInit {
 	allowExpandAllCommand = new Command({ execute: () => this.enableExpand = true });
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	ngAfterViewInit() {

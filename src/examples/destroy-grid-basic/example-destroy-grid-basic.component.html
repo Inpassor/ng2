@@ -4,7 +4,7 @@
 </button>
 <ng-container *ngIf="isVisible">
 	<q-grid caption="Destroy Grid Basic"
-	        [rows]="rows | async">
+	        [rows]="rows$ | async">
 		<q-grid-columns generation="deep">
 		</q-grid-columns>
 	</q-grid>

@@ -33,17 +33,17 @@ Note that now q-grid supports 2 themes out of box `@angular/material` and `basic
 @Component({
    selector: 'my-component',
    template: `
-      <q-grid [rows]="myRows | async">
+      <q-grid [rows]="rows$ | async">
             <q-grid-columns generation="deep">
             </q-grid-columns>
       </q-grid>
       `
 })
 export class MyComponent {
-   myRows: Observable<[]>;
+   rows$: Observable<any[]>;
 
    constructor(dataService: MyDataService) {
-         this.myRows = dataService.getRows();
+         this.rows$ = dataService.getRows();
    }
 }
 ```
@@ -73,8 +73,8 @@ npm run start
 ## Browser support
 
 * `Chrome` is supported.
+* `FireFox` is supported.
 * `Safari` is in progress.
-* `FireFox` is in progress.
 * `Edge` is in progress.
 * `IE11` is in progress.
 

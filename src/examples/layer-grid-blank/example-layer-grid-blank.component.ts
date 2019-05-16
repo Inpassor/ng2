@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleLayerGridBlankComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(private dataService: DataService) {
 	}
 
 	loadData() {
-		this.rows = this.dataService.getAtoms();
+		this.rows$ = this.dataService.getAtoms();
 	}
 }

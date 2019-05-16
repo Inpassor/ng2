@@ -10,10 +10,10 @@ import { Observable, of } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleGridListBasicComponent {
-	models: Observable<any[]>;
+	models$: Observable<any[]>;
 
 	constructor(dataService: DataService) {
-		this.models = of([{
+		this.models$ = of([{
 			columns: [{
 				key: 'number',
 				title: 'Number'
@@ -22,7 +22,7 @@ export class ExampleGridListBasicComponent {
 				title: 'Name'
 			}
 			],
-			rows: dataService.getAtoms()
+			rows$: dataService.getAtoms()
 		},
 		]);
 	}

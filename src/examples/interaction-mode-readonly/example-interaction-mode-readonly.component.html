@@ -1,6 +1,6 @@
 <q-grid caption="Interaction Mode Readonly"
         interactionMode="readonly"
-        [rows]="rows | async">
+        [rows]="rows$ | async">
         <q-grid-columns generation="deep">
                 <q-grid-column key="test"
                                title="Test Detached"

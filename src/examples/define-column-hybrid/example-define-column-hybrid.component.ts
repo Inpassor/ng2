@@ -11,7 +11,7 @@ import { Column } from 'ng2-qgrid';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleDefineColumnHybridComponent {
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 	columns: Column[] = [{
 		key: 'mass',
 		title: 'should be js Mass'
@@ -22,6 +22,6 @@ export class ExampleDefineColumnHybridComponent {
 	}];
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 }

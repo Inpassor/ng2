@@ -1,5 +1,5 @@
 <q-grid caption="Group Row Flat"
-        [rows]="rows | async"
+        [rows]="rows$ | async"
         [groupBy]="['bondingType', 'groupBlock']"
         groupMode="flat">
 	<q-grid-columns generation="deep">

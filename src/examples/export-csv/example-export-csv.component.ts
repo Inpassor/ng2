@@ -15,10 +15,10 @@ import * as fileSaver from 'file-saver';
 })
 export class ExampleExportCsvComponent implements AfterViewInit {
 	@ViewChild(GridComponent) myGrid: GridComponent;
-	rows: Observable<Atom[]>;
+	rows$: Observable<Atom[]>;
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getAtoms();
+		this.rows$ = dataService.getAtoms();
 	}
 
 	ngAfterViewInit() {

@@ -13,7 +13,7 @@ import { GridComponent, Command, Grid } from 'ng2-qgrid';
 })
 export class ExampleDataRowAddComponent {
 	@ViewChild(GridComponent) grid: GridComponent;
-	rows: Observable<Human[]>;
+	rows$: Observable<Human[]>;
 
 	addRow = new Command({
 		execute: () => {
@@ -31,6 +31,6 @@ export class ExampleDataRowAddComponent {
 
 
 	constructor(dataService: DataService, private qgrid: Grid) {
-		this.rows = dataService.getPeople();
+		this.rows$ = dataService.getPeople();
 	}
 }

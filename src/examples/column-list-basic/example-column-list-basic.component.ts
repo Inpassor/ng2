@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleColumnListBasicComponent {
-	rows: Observable<Human[]>;
+	rows$: Observable<Human[]>;
 	group = '';
 
 	constructor(dataService: DataService) {
-		this.rows = dataService.getPeople();
+		this.rows$ = dataService.getPeople();
 	}
 }
